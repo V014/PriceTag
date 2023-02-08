@@ -55,3 +55,4 @@ C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\Prices.exe
 C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\Prices.pdb
 C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\System.Data.SQLite.xml
 C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.csproj.CopyComplete
+C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.csprojResolveAssemblyReference.cache

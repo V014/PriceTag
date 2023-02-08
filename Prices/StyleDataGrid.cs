@@ -8,17 +8,17 @@ namespace Prices
         // styling of the datagrid
         public void theme(DataGridView dataGrid)
         {
-            //dataGrid.BorderStyle = BorderStyle.None;
             dataGrid.EnableHeadersVisualStyles = false;
             dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGrid.RowHeadersVisible = false;
             dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGrid.BackgroundColor = Color.FromArgb(17, 17, 17);
-            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
+            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(24, 24, 24);
             dataGrid.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
 
             dataGrid.RowsDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
@@ -26,8 +26,7 @@ namespace Prices
             dataGrid.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
 
             dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(17, 17, 17);
-            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 24, 24);
             dataGrid.ColumnHeadersHeight = 30;
             dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 

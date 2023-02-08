@@ -21,18 +21,24 @@ namespace Prices
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string comaprison = con.ReadString($"SELECT Name FROM Stock WHERE Name LIKE '{txt_name.Text}' AND Quantity LIKE '{txt_qauntity.Text}' AND Price LIKE '{txt_price.Text}'");
+            string name = txt_name.Text;
+            string quantity = txt_qauntity.Text;
+            int price = int.Parse(txt_price.Text);
+            int stock = int.Parse(txt_stock.Text);
+
+            string comaprison = con.ReadString($"SELECT Name FROM Stock WHERE Name LIKE '{name}' AND Quantity LIKE '{quantity}' AND Price LIKE '{price}'");
             if (comaprison == "")
             {
                 try
                 {
-                    con.ExecuteQuery($"INSERT INTO Stock VALUES(NULL, '{txt_name.Text}', '{txt_qauntity.Text}', '{txt_price.Text}', '{txt_stock.Text}')");
+                    con.ExecuteQuery($"INSERT INTO Stock VALUES(NULL, '{name}', '{quantity}', '{price}', '{stock}', 0)");
+
                     SoundPlayer save = new SoundPlayer(@"sfx/click.wav");
                     save.Play();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to record!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
