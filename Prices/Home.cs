@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Prices
 {
-    public partial class Home : MetroFramework.Forms.MetroForm
+    public partial class Home : Form
     {
         // link the database
         Connection con = new Connection();
@@ -15,18 +15,12 @@ namespace Prices
         public Home()
         {
             InitializeComponent();
+            LoadData(searchData);
         }
         //loads data into a data grid
-        public void LoadData(string query, DataGridView dataGrid)
+        public void LoadData(DataGridView dataGrid)
         {
-            var conn = con.GetConnection();
-            var DB = new SQLiteDataAdapter(query, conn);
-            var DS = new DataSet();
-            var DT = new DataTable();
-            DB.Fill(DS);
-            DT = DS.Tables[0];
-            dataGrid.DataSource = DT;
-            conn.Close();
+            con.LoadData("SELECT * FROM stock", dataGrid);
         }
         // react when user starts typing
         private void txt_search_KeyPress(object sender, KeyPressEventArgs e)

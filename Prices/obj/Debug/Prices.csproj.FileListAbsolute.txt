@@ -6,9 +6,7 @@ c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Pri
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.csproj.GenerateResource.Cache
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.exe
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.pdb
-c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\bin\Debug\System.Data.SQLite.dll
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\bin\Debug\System.Data.SQLite.xml
-c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.App.resources
 C:\Users\Bzk\Documents\Visual Studio 2015\Projects\Prices\Prices\bin\Debug\Prices.exe.config
 C:\Users\Bzk\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.exe
 C:\Users\Bzk\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.pdb

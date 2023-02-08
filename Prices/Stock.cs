@@ -23,7 +23,7 @@ namespace Prices
         private void Stock_Load(object sender, EventArgs e)
         {
             string cmd = "SELECT Name, Price, Quantity, stock FROM stock";
-            app.LoadData(cmd, stockData);
+            con.LoadData(cmd, stockData);
             stockData.Show();
             style.theme(stockData);
         }
@@ -43,7 +43,7 @@ namespace Prices
                     string queryDelete = "DELETE FROM Stock WHERE id = '" + id + "'";
                     con.ExecuteQuery(queryDelete);
                     string queryRecords = "SELECT * FROM Stock";
-                    app.LoadData(queryRecords, stockData);
+                    con.LoadData(queryRecords, stockData);
                     save.Play();
                 }
                 catch (Exception)
