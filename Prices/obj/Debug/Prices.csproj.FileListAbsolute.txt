@@ -39,7 +39,6 @@ C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\De
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.Stock.resources
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.csproj.GenerateResource.Cache
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.exe.licenses
-C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.Stock.resources
 C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.Home.resources
 C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.AddItem.resources
 C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.csprojAssemblyReference.cache

@@ -174,7 +174,9 @@
             this.MaximizeBox = false;
             this.Name = "AddItem";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Item to stock";
+            this.TopMost = true;
             this.panel_control.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
