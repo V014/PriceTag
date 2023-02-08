@@ -6,12 +6,14 @@ namespace Prices
 {
     public partial class Stock : MetroFramework.Forms.MetroForm
     {
+        Home app = new Home();
+        Connection con = new Connection();
+        StyleDataGrid style = new StyleDataGrid();
         public Stock()
         {
             InitializeComponent();
         }
-        Home app = new Home();
-        Connection con = new Connection();
+        
         private void btn_add_Click(object sender, EventArgs e)
         {
             AddItem addItem = new AddItem();
@@ -23,7 +25,7 @@ namespace Prices
             string cmd = "SELECT Name, Price, Quantity, stock FROM stock";
             app.LoadData(cmd, stockData);
             stockData.Show();
-            app.DataGridStyle(stockData);
+            style.theme(stockData);
         }
         // delete from database
         private void btn_delete_Click(object sender, EventArgs e)

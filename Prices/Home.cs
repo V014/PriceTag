@@ -8,12 +8,14 @@ namespace Prices
 {
     public partial class Home : MetroFramework.Forms.MetroForm
     {
+        // link the database
+        Connection con = new Connection();
+        StyleDataGrid style = new StyleDataGrid();
+
         public Home()
         {
             InitializeComponent();
         }
-        // link the database
-        Connection con = new Connection();
         //loads data into a data grid
         public void LoadData(string query, DataGridView dataGrid)
         {
@@ -26,30 +28,6 @@ namespace Prices
             dataGrid.DataSource = DT;
             conn.Close();
         }
-        // style the datagrid
-        public void DataGridStyle(DataGridView dataGrid)
-        {
-            //dataGrid.BorderStyle = BorderStyle.None;
-            dataGrid.EnableHeadersVisualStyles = false;
-            dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-
-            dataGrid.BackgroundColor = Color.FromArgb(34,34,34);
-            dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-            dataGrid.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
-
-            dataGrid.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-            dataGrid.RowsDefaultCellStyle.ForeColor = Color.White;
-
-            dataGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(51,51,51);
-            dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            dataGrid.DefaultCellStyle.Font = new Font("Roboto", 14);
-            dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 14);
-            dataGrid.AlternatingRowsDefaultCellStyle.Font = new Font("Roboto", 14);
-        }
         // react when user starts typing
         private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -59,7 +37,7 @@ namespace Prices
                 con.LoadData("SELECT Name, Price, Quantity, stock FROM stock WHERE Name LIKE '%" + txt_search.Text + "%'", searchData);
                 //LoadData(cmd, searchData);
                 searchData.Show();
-                DataGridStyle(searchData);
+                style.theme(searchData);
             }
             else
             {

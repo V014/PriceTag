@@ -45,3 +45,18 @@ C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\De
 C:\Users\wanga.HP-BZK\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.exe.licenses
 C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.Stock.resources
 C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.Home.resources
+C:\Users\Wanga\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.AddItem.resources
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.csprojAssemblyReference.cache
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.AddItem.resources
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.Home.resources
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.Properties.Resources.resources
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.Stock.resources
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.csproj.GenerateResource.cache
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.csproj.CoreCompileInputs.cache
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.exe
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.pdb
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\Prices.exe.config
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\Prices.exe
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\Prices.pdb
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\bin\Debug\System.Data.SQLite.xml
+C:\Users\Wanga Kanjala\source\repos\Prices\Prices\obj\Debug\Prices.csproj.CopyComplete
