@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Prices
 {
-    public partial class AddItem : MetroFramework.Forms.MetroForm
+    public partial class AddItem : Form
     {
         Connection con = new Connection();
         public AddItem()

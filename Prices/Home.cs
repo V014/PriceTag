@@ -16,11 +16,13 @@ namespace Prices
         {
             InitializeComponent();
             LoadData(searchData);
+            style.theme(searchData);
         }
         //loads data into a data grid
         public void LoadData(DataGridView dataGrid)
         {
             con.LoadData("SELECT * FROM stock", dataGrid);
+            dataGrid.Columns[0].Visible = false;
         }
         // react when user starts typing
         private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,8 +43,8 @@ namespace Prices
         // open the database
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Stock stock = new Stock();
-            stock.Show();
+            AddItem item = new AddItem();
+            item.Show();
         }
     }
 }

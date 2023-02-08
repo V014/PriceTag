@@ -1,12 +1,10 @@
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\bin\Debug\Prices.exe.config
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\bin\Debug\Prices.exe
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\bin\Debug\Prices.pdb
-c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.csprojResolveAssemblyReference.cache
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.Properties.Resources.resources
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.csproj.GenerateResource.Cache
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.exe
 c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\obj\Debug\Prices.pdb
-c:\users\wanga\documents\visual studio 2015\Projects\Prices\Prices\bin\Debug\System.Data.SQLite.xml
 C:\Users\Bzk\Documents\Visual Studio 2015\Projects\Prices\Prices\bin\Debug\Prices.exe.config
 C:\Users\Bzk\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.exe
 C:\Users\Bzk\Documents\Visual Studio 2015\Projects\Prices\Prices\obj\Debug\Prices.pdb
