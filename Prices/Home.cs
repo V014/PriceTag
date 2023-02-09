@@ -47,9 +47,12 @@ namespace Prices
         {
             // ... execute the query using a database library, such as ADO.NET, Entity Framework, etc.  
             SQLiteConnection connection = con.GetConnection();
-            // get income
-            SQLiteCommand queryMoney = new SQLiteCommand("SELECT Purchased, Name FROM stock ORDER BY Purchased DESC", connection);
-            SQLiteDataReader income = queryMoney.ExecuteReader();
+            // get purchased stock
+            SQLiteCommand purchasedStock = new SQLiteCommand("SELECT Purchased, Name FROM stock", connection);
+            SQLiteDataReader purchased = purchasedStock.ExecuteReader();
+            // get original stock
+            SQLiteCommand originalStock = new SQLiteCommand("SELECT Stock, Name FROM stock", connection);
+            SQLiteDataReader stock = originalStock.ExecuteReader();
             // get expenditure
             /*
             SQLiteCommand queryExpenditure = new SQLiteCommand("SELECT amount FROM transactions WHERE action = '-'", connection);
@@ -58,14 +61,16 @@ namespace Prices
             try
             {
                 chart_sales.Series[0].Points.Clear();
-                while (income.Read())
+                chart_sales.Series[1].Points.Clear();
+                while (purchased.Read() && stock.Read())
                 {
-                    chart_sales.Series[0].Points.Add(income.GetInt32(0));
+                    chart_sales.Series[0].Points.Add(purchased.GetInt32(0));
+                    chart_sales.Series[1].Points.Add(stock.GetInt32(0));
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Income unavailabe", "Assistant", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Assistant", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             /*
             try
