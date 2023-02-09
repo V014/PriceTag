@@ -201,5 +201,17 @@ namespace Prices
                 MessageBox.Show(ex.ToString(), "Assistant");
             }
         }
+
+        private void Home_SizeChanged(object sender, EventArgs e)
+        {
+            if(this.Width < 800)
+            {
+                splitMain.Panel1Collapsed = true;
+            }
+            else
+            {
+                splitMain.Panel1Collapsed = false;
+            }
+        }
     }
 }

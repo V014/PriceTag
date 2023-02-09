@@ -1,4 +1,6 @@
-# PriceTag
+# PriceTag 
+
+<img src="screenshots/chart.gif" alt="Chart animation">
 
 ## Description
 

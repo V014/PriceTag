@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel_main = new System.Windows.Forms.Panel();
             this.splitMain = new System.Windows.Forms.SplitContainer();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -60,8 +60,6 @@
             this.lbl_stock_value = new System.Windows.Forms.Label();
             this.label_value = new System.Windows.Forms.Label();
             this.chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel_img = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMain)).BeginInit();
             this.splitMain.Panel1.SuspendLayout();
@@ -79,8 +77,6 @@
             this.panel_product_stock.SuspendLayout();
             this.panel_stock_value.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).BeginInit();
-            this.panel_img.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main
@@ -105,7 +101,6 @@
             this.splitMain.Panel1.Controls.Add(this.btn_update);
             this.splitMain.Panel1.Controls.Add(this.btn_add);
             this.splitMain.Panel1.Controls.Add(this.panel_search);
-            this.splitMain.Panel1.Controls.Add(this.panel_img);
             // 
             // splitMain.Panel2
             // 
@@ -123,7 +118,7 @@
             this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(0, 247);
+            this.btn_delete.Location = new System.Drawing.Point(0, 114);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(133, 35);
             this.btn_delete.TabIndex = 10;
@@ -140,7 +135,7 @@
             this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(0, 212);
+            this.btn_update.Location = new System.Drawing.Point(0, 79);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(133, 35);
             this.btn_update.TabIndex = 9;
@@ -157,7 +152,7 @@
             this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(0, 177);
+            this.btn_add.Location = new System.Drawing.Point(0, 44);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(133, 35);
             this.btn_add.TabIndex = 8;
@@ -171,7 +166,7 @@
             this.panel_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panel_search.Controls.Add(this.txt_search);
             this.panel_search.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_search.Location = new System.Drawing.Point(0, 133);
+            this.panel_search.Location = new System.Drawing.Point(0, 0);
             this.panel_search.Name = "panel_search";
             this.panel_search.Size = new System.Drawing.Size(133, 44);
             this.panel_search.TabIndex = 7;
@@ -426,48 +421,30 @@
             this.chart_sales.Legends.Add(legend1);
             this.chart_sales.Location = new System.Drawing.Point(0, 0);
             this.chart_sales.Name = "chart_sales";
-            series1.BorderWidth = 2;
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
+            series1.BackSecondaryColor = System.Drawing.Color.LimeGreen;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Green;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
-            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             series1.Name = "Sales";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series2.BorderWidth = 2;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             series2.Legend = "Legend1";
+            series2.MarkerSize = 8;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series2.Name = "Stock";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
             this.chart_sales.Series.Add(series1);
             this.chart_sales.Series.Add(series2);
             this.chart_sales.Size = new System.Drawing.Size(151, 133);
             this.chart_sales.TabIndex = 1;
             this.chart_sales.Text = "chart1";
             this.chart_sales.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
-            // 
-            // panel_img
-            // 
-            this.panel_img.BackColor = System.Drawing.Color.Transparent;
-            this.panel_img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_img.BackgroundImage")));
-            this.panel_img.Controls.Add(this.pictureBox1);
-            this.panel_img.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_img.Location = new System.Drawing.Point(0, 0);
-            this.panel_img.Name = "panel_img";
-            this.panel_img.Size = new System.Drawing.Size(133, 133);
-            this.panel_img.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Home
             // 
@@ -480,6 +457,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prices";
+            this.SizeChanged += new System.EventHandler(this.Home_SizeChanged);
             this.panel_main.ResumeLayout(false);
             this.splitMain.Panel1.ResumeLayout(false);
             this.splitMain.Panel2.ResumeLayout(false);
@@ -501,8 +479,6 @@
             this.panel_stock_value.ResumeLayout(false);
             this.panel_stock_value.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).EndInit();
-            this.panel_img.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,8 +510,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel_img;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
