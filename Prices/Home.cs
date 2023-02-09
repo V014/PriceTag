@@ -183,5 +183,23 @@ namespace Prices
         {
             data_search.Rows.Add();
         }
+        // when user clicks purchase
+        private void btn_purchase_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = data_search.SelectedRows[0];
+            string id = selectedRow.Cells[0].Value.ToString();
+            int purchased = Convert.ToInt32(selectedRow.Cells[5].Value);
+            int update = purchased + 1;
+
+            try
+            {
+                con.ExecuteQuery($"UPDATE stock SET Purchased = {update} WHERE ID = {id}");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Assistant");
+            }
+        }
     }
 }

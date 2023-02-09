@@ -41,42 +41,46 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.panel_search = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btn_purchase = new System.Windows.Forms.Button();
-            this.panel_stock_value = new System.Windows.Forms.Panel();
-            this.lbl_stock_value = new System.Windows.Forms.Label();
-            this.label_value = new System.Windows.Forms.Label();
-            this.panel_stock = new System.Windows.Forms.Panel();
-            this.lbl_products = new System.Windows.Forms.Label();
-            this.label_stock = new System.Windows.Forms.Label();
-            this.panel_product_stock = new System.Windows.Forms.Panel();
-            this.lbl_product_stock = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.data_search = new System.Windows.Forms.DataGridView();
             this.menu_data = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_purchase = new System.Windows.Forms.Button();
+            this.panel_stock = new System.Windows.Forms.Panel();
+            this.lbl_products = new System.Windows.Forms.Label();
+            this.label_stock = new System.Windows.Forms.Label();
+            this.panel_product_stock = new System.Windows.Forms.Panel();
+            this.lbl_product_stock = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel_stock_value = new System.Windows.Forms.Panel();
+            this.lbl_stock_value = new System.Windows.Forms.Label();
+            this.label_value = new System.Windows.Forms.Label();
+            this.chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel_img = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMain)).BeginInit();
             this.splitMain.Panel1.SuspendLayout();
             this.splitMain.Panel2.SuspendLayout();
             this.splitMain.SuspendLayout();
             this.panel_search.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_search)).BeginInit();
+            this.menu_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).BeginInit();
-            this.panel_stock_value.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel_stock.SuspendLayout();
             this.panel_product_stock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_search)).BeginInit();
-            this.menu_data.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel_stock_value.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).BeginInit();
+            this.panel_img.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main
@@ -101,6 +105,7 @@
             this.splitMain.Panel1.Controls.Add(this.btn_update);
             this.splitMain.Panel1.Controls.Add(this.btn_add);
             this.splitMain.Panel1.Controls.Add(this.panel_search);
+            this.splitMain.Panel1.Controls.Add(this.panel_img);
             // 
             // splitMain.Panel2
             // 
@@ -118,7 +123,7 @@
             this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(0, 114);
+            this.btn_delete.Location = new System.Drawing.Point(0, 247);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(133, 35);
             this.btn_delete.TabIndex = 10;
@@ -135,7 +140,7 @@
             this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(0, 79);
+            this.btn_update.Location = new System.Drawing.Point(0, 212);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(133, 35);
             this.btn_update.TabIndex = 9;
@@ -152,7 +157,7 @@
             this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(0, 44);
+            this.btn_add.Location = new System.Drawing.Point(0, 177);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(133, 35);
             this.btn_add.TabIndex = 8;
@@ -166,7 +171,7 @@
             this.panel_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panel_search.Controls.Add(this.txt_search);
             this.panel_search.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_search.Location = new System.Drawing.Point(0, 0);
+            this.panel_search.Location = new System.Drawing.Point(0, 133);
             this.panel_search.Name = "panel_search";
             this.panel_search.Size = new System.Drawing.Size(133, 44);
             this.panel_search.TabIndex = 7;
@@ -183,6 +188,64 @@
             this.txt_search.TabIndex = 5;
             this.txt_search.Text = "🔍 Search";
             this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
+            // 
+            // data_search
+            // 
+            this.data_search.AllowUserToAddRows = false;
+            this.data_search.AllowUserToDeleteRows = false;
+            this.data_search.AllowUserToResizeColumns = false;
+            this.data_search.AllowUserToResizeRows = false;
+            this.data_search.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data_search.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.data_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_search.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.data_search.ColumnHeadersHeight = 40;
+            this.data_search.ContextMenuStrip = this.menu_data;
+            this.data_search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_search.Location = new System.Drawing.Point(0, 133);
+            this.data_search.Name = "data_search";
+            this.data_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data_search.Size = new System.Drawing.Size(716, 326);
+            this.data_search.TabIndex = 0;
+            this.data_search.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_search_CellEndEdit);
+            // 
+            // menu_data
+            // 
+            this.menu_data.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addMenuItem,
+            this.updateMenuItem,
+            this.deleteMenuItem,
+            this.refreshMenuItem});
+            this.menu_data.Name = "menu_data";
+            this.menu_data.Size = new System.Drawing.Size(114, 92);
+            // 
+            // addMenuItem
+            // 
+            this.addMenuItem.Name = "addMenuItem";
+            this.addMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.addMenuItem.Text = "Add";
+            this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
+            // 
+            // updateMenuItem
+            // 
+            this.updateMenuItem.Name = "updateMenuItem";
+            this.updateMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.updateMenuItem.Text = "Update";
+            this.updateMenuItem.Click += new System.EventHandler(this.updateMenuItem_Click);
+            // 
+            // deleteMenuItem
+            // 
+            this.deleteMenuItem.Name = "deleteMenuItem";
+            this.deleteMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.deleteMenuItem.Text = "Delete";
+            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
+            // 
+            // refreshMenuItem
+            // 
+            this.refreshMenuItem.Name = "refreshMenuItem";
+            this.refreshMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshMenuItem.Text = "Refresh";
+            this.refreshMenuItem.Click += new System.EventHandler(this.refreshMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -201,63 +264,17 @@
             this.splitContainer1.SplitterDistance = 561;
             this.splitContainer1.TabIndex = 9;
             // 
-            // chart_sales
+            // flowLayoutPanel1
             // 
-            this.chart_sales.BackColor = System.Drawing.Color.Transparent;
-            this.chart_sales.BorderlineColor = System.Drawing.Color.Empty;
-            this.chart_sales.BorderlineWidth = 0;
-            this.chart_sales.BorderSkin.BackColor = System.Drawing.Color.Empty;
-            this.chart_sales.BorderSkin.BorderColor = System.Drawing.Color.Empty;
-            this.chart_sales.BorderSkin.BorderWidth = 0;
-            this.chart_sales.BorderSkin.PageColor = System.Drawing.Color.Empty;
-            chartArea1.AlignmentStyle = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Cursor)));
-            chartArea1.AxisX.IsMarginVisible = false;
-            chartArea1.AxisX.LabelAutoFitMaxFontSize = 7;
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gray;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Empty;
-            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            chartArea1.AxisY.LabelAutoFitMaxFontSize = 7;
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gray;
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Empty;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            chartArea1.BorderColor = System.Drawing.Color.Empty;
-            chartArea1.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            this.chart_sales.ChartAreas.Add(chartArea1);
-            this.chart_sales.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.AutoFitMinFontSize = 6;
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.DockedToChartArea = "ChartArea1";
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            legend1.ForeColor = System.Drawing.Color.White;
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            legend1.TitleAlignment = System.Drawing.StringAlignment.Near;
-            this.chart_sales.Legends.Add(legend1);
-            this.chart_sales.Location = new System.Drawing.Point(0, 0);
-            this.chart_sales.Name = "chart_sales";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Green;
-            series1.LabelForeColor = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            series1.Name = "Sales";
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Stock";
-            this.chart_sales.Series.Add(series1);
-            this.chart_sales.Series.Add(series2);
-            this.chart_sales.Size = new System.Drawing.Size(151, 133);
-            this.chart_sales.TabIndex = 1;
-            this.chart_sales.Text = "chart1";
-            this.chart_sales.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
+            this.flowLayoutPanel1.Controls.Add(this.btn_purchase);
+            this.flowLayoutPanel1.Controls.Add(this.panel_stock);
+            this.flowLayoutPanel1.Controls.Add(this.panel_product_stock);
+            this.flowLayoutPanel1.Controls.Add(this.panel_stock_value);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(561, 133);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btn_purchase
             // 
@@ -273,38 +290,7 @@
             this.btn_purchase.Size = new System.Drawing.Size(133, 125);
             this.btn_purchase.TabIndex = 8;
             this.btn_purchase.UseVisualStyleBackColor = false;
-            // 
-            // panel_stock_value
-            // 
-            this.panel_stock_value.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panel_stock_value.Controls.Add(this.lbl_stock_value);
-            this.panel_stock_value.Controls.Add(this.label_value);
-            this.panel_stock_value.Location = new System.Drawing.Point(420, 3);
-            this.panel_stock_value.Name = "panel_stock_value";
-            this.panel_stock_value.Size = new System.Drawing.Size(133, 125);
-            this.panel_stock_value.TabIndex = 7;
-            // 
-            // lbl_stock_value
-            // 
-            this.lbl_stock_value.AutoSize = true;
-            this.lbl_stock_value.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_stock_value.ForeColor = System.Drawing.Color.White;
-            this.lbl_stock_value.Location = new System.Drawing.Point(3, 6);
-            this.lbl_stock_value.Name = "lbl_stock_value";
-            this.lbl_stock_value.Size = new System.Drawing.Size(29, 32);
-            this.lbl_stock_value.TabIndex = 0;
-            this.lbl_stock_value.Text = "0";
-            // 
-            // label_value
-            // 
-            this.label_value.AutoSize = true;
-            this.label_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label_value.ForeColor = System.Drawing.Color.White;
-            this.label_value.Location = new System.Drawing.Point(4, 106);
-            this.label_value.Name = "label_value";
-            this.label_value.Size = new System.Drawing.Size(97, 17);
-            this.label_value.TabIndex = 0;
-            this.label_value.Text = "Value of stock";
+            this.btn_purchase.Click += new System.EventHandler(this.btn_purchase_Click);
             // 
             // panel_stock
             // 
@@ -370,75 +356,118 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Stock of products ";
             // 
-            // data_search
+            // panel_stock_value
             // 
-            this.data_search.AllowUserToAddRows = false;
-            this.data_search.AllowUserToDeleteRows = false;
-            this.data_search.AllowUserToResizeColumns = false;
-            this.data_search.AllowUserToResizeRows = false;
-            this.data_search.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.data_search.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.data_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.data_search.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.data_search.ColumnHeadersHeight = 40;
-            this.data_search.ContextMenuStrip = this.menu_data;
-            this.data_search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_search.Location = new System.Drawing.Point(0, 133);
-            this.data_search.Name = "data_search";
-            this.data_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_search.Size = new System.Drawing.Size(716, 326);
-            this.data_search.TabIndex = 0;
-            this.data_search.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_search_CellEndEdit);
+            this.panel_stock_value.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panel_stock_value.Controls.Add(this.lbl_stock_value);
+            this.panel_stock_value.Controls.Add(this.label_value);
+            this.panel_stock_value.Location = new System.Drawing.Point(420, 3);
+            this.panel_stock_value.Name = "panel_stock_value";
+            this.panel_stock_value.Size = new System.Drawing.Size(133, 125);
+            this.panel_stock_value.TabIndex = 7;
             // 
-            // menu_data
+            // lbl_stock_value
             // 
-            this.menu_data.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMenuItem,
-            this.updateMenuItem,
-            this.deleteMenuItem,
-            this.refreshMenuItem});
-            this.menu_data.Name = "menu_data";
-            this.menu_data.Size = new System.Drawing.Size(114, 92);
+            this.lbl_stock_value.AutoSize = true;
+            this.lbl_stock_value.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_stock_value.ForeColor = System.Drawing.Color.White;
+            this.lbl_stock_value.Location = new System.Drawing.Point(3, 6);
+            this.lbl_stock_value.Name = "lbl_stock_value";
+            this.lbl_stock_value.Size = new System.Drawing.Size(29, 32);
+            this.lbl_stock_value.TabIndex = 0;
+            this.lbl_stock_value.Text = "0";
             // 
-            // addMenuItem
+            // label_value
             // 
-            this.addMenuItem.Name = "addMenuItem";
-            this.addMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.addMenuItem.Text = "Add";
-            this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
+            this.label_value.AutoSize = true;
+            this.label_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label_value.ForeColor = System.Drawing.Color.White;
+            this.label_value.Location = new System.Drawing.Point(4, 106);
+            this.label_value.Name = "label_value";
+            this.label_value.Size = new System.Drawing.Size(97, 17);
+            this.label_value.TabIndex = 0;
+            this.label_value.Text = "Value of stock";
             // 
-            // updateMenuItem
+            // chart_sales
             // 
-            this.updateMenuItem.Name = "updateMenuItem";
-            this.updateMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.updateMenuItem.Text = "Update";
-            this.updateMenuItem.Click += new System.EventHandler(this.updateMenuItem_Click);
+            this.chart_sales.BackColor = System.Drawing.Color.Transparent;
+            this.chart_sales.BorderlineColor = System.Drawing.Color.Empty;
+            this.chart_sales.BorderlineWidth = 0;
+            this.chart_sales.BorderSkin.BackColor = System.Drawing.Color.Empty;
+            this.chart_sales.BorderSkin.BorderColor = System.Drawing.Color.Empty;
+            this.chart_sales.BorderSkin.BorderWidth = 0;
+            this.chart_sales.BorderSkin.PageColor = System.Drawing.Color.Empty;
+            chartArea1.AlignmentStyle = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Cursor)));
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Empty;
+            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            chartArea1.AxisY.LabelAutoFitMaxFontSize = 7;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Empty;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            chartArea1.BorderColor = System.Drawing.Color.Empty;
+            chartArea1.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            this.chart_sales.ChartAreas.Add(chartArea1);
+            this.chart_sales.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.AutoFitMinFontSize = 6;
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.DockedToChartArea = "ChartArea1";
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            legend1.TitleAlignment = System.Drawing.StringAlignment.Near;
+            this.chart_sales.Legends.Add(legend1);
+            this.chart_sales.Location = new System.Drawing.Point(0, 0);
+            this.chart_sales.Name = "chart_sales";
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Green;
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series1.Name = "Sales";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Stock";
+            this.chart_sales.Series.Add(series1);
+            this.chart_sales.Series.Add(series2);
+            this.chart_sales.Size = new System.Drawing.Size(151, 133);
+            this.chart_sales.TabIndex = 1;
+            this.chart_sales.Text = "chart1";
+            this.chart_sales.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
             // 
-            // deleteMenuItem
+            // panel_img
             // 
-            this.deleteMenuItem.Name = "deleteMenuItem";
-            this.deleteMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.deleteMenuItem.Text = "Delete";
-            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
+            this.panel_img.BackColor = System.Drawing.Color.Transparent;
+            this.panel_img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_img.BackgroundImage")));
+            this.panel_img.Controls.Add(this.pictureBox1);
+            this.panel_img.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_img.Location = new System.Drawing.Point(0, 0);
+            this.panel_img.Name = "panel_img";
+            this.panel_img.Size = new System.Drawing.Size(133, 133);
+            this.panel_img.TabIndex = 11;
             // 
-            // refreshMenuItem
+            // pictureBox1
             // 
-            this.refreshMenuItem.Name = "refreshMenuItem";
-            this.refreshMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.refreshMenuItem.Text = "Refresh";
-            this.refreshMenuItem.Click += new System.EventHandler(this.refreshMenuItem_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btn_purchase);
-            this.flowLayoutPanel1.Controls.Add(this.panel_stock);
-            this.flowLayoutPanel1.Controls.Add(this.panel_product_stock);
-            this.flowLayoutPanel1.Controls.Add(this.panel_stock_value);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(561, 133);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Home
             // 
@@ -458,20 +487,22 @@
             this.splitMain.ResumeLayout(false);
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_search)).EndInit();
+            this.menu_data.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).EndInit();
-            this.panel_stock_value.ResumeLayout(false);
-            this.panel_stock_value.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel_stock.ResumeLayout(false);
             this.panel_stock.PerformLayout();
             this.panel_product_stock.ResumeLayout(false);
             this.panel_product_stock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_search)).EndInit();
-            this.menu_data.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel_stock_value.ResumeLayout(false);
+            this.panel_stock_value.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).EndInit();
+            this.panel_img.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,6 +534,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel_img;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
