@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_main = new System.Windows.Forms.Panel();
             this.splitMain = new System.Windows.Forms.SplitContainer();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -38,6 +41,11 @@
             this.panel_search = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.data_search = new System.Windows.Forms.DataGridView();
+            this.menu_data = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_purchase = new System.Windows.Forms.Button();
             this.panel_stock = new System.Windows.Forms.Panel();
@@ -49,15 +57,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_stock_value = new System.Windows.Forms.Label();
             this.label_value = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.menu_data = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMain)).BeginInit();
             this.splitMain.Panel1.SuspendLayout();
@@ -65,13 +66,13 @@
             this.splitMain.SuspendLayout();
             this.panel_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_search)).BeginInit();
+            this.menu_data.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel_stock.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.menu_data.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main
@@ -81,7 +82,7 @@
             this.panel_main.Location = new System.Drawing.Point(0, 0);
             this.panel_main.Name = "panel_main";
             this.panel_main.Padding = new System.Windows.Forms.Padding(10);
-            this.panel_main.Size = new System.Drawing.Size(691, 479);
+            this.panel_main.Size = new System.Drawing.Size(1012, 479);
             this.panel_main.TabIndex = 1;
             // 
             // splitMain
@@ -101,8 +102,8 @@
             // 
             this.splitMain.Panel2.Controls.Add(this.data_search);
             this.splitMain.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitMain.Size = new System.Drawing.Size(671, 459);
-            this.splitMain.SplitterDistance = 105;
+            this.splitMain.Size = new System.Drawing.Size(992, 459);
+            this.splitMain.SplitterDistance = 155;
             this.splitMain.TabIndex = 10;
             // 
             // btn_delete
@@ -115,7 +116,7 @@
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.Location = new System.Drawing.Point(0, 114);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(105, 35);
+            this.btn_delete.Size = new System.Drawing.Size(155, 35);
             this.btn_delete.TabIndex = 10;
             this.btn_delete.Text = "❌ Delete Item";
             this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -132,7 +133,7 @@
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.Location = new System.Drawing.Point(0, 79);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(105, 35);
+            this.btn_update.Size = new System.Drawing.Size(155, 35);
             this.btn_update.TabIndex = 9;
             this.btn_update.Text = "♻️ Update Item";
             this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,7 +150,7 @@
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.Location = new System.Drawing.Point(0, 44);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(105, 35);
+            this.btn_add.Size = new System.Drawing.Size(155, 35);
             this.btn_add.TabIndex = 8;
             this.btn_add.Text = "➕ Add Items";
             this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +164,7 @@
             this.panel_search.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_search.Location = new System.Drawing.Point(0, 0);
             this.panel_search.Name = "panel_search";
-            this.panel_search.Size = new System.Drawing.Size(105, 44);
+            this.panel_search.Size = new System.Drawing.Size(155, 44);
             this.panel_search.TabIndex = 7;
             // 
             // txt_search
@@ -195,9 +196,47 @@
             this.data_search.Location = new System.Drawing.Point(0, 134);
             this.data_search.Name = "data_search";
             this.data_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_search.Size = new System.Drawing.Size(562, 325);
+            this.data_search.Size = new System.Drawing.Size(833, 325);
             this.data_search.TabIndex = 0;
             this.data_search.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_search_CellEndEdit);
+            // 
+            // menu_data
+            // 
+            this.menu_data.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addMenuItem,
+            this.updateMenuItem,
+            this.deleteMenuItem,
+            this.refreshMenuItem});
+            this.menu_data.Name = "menu_data";
+            this.menu_data.Size = new System.Drawing.Size(114, 92);
+            // 
+            // addMenuItem
+            // 
+            this.addMenuItem.Name = "addMenuItem";
+            this.addMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.addMenuItem.Text = "Add";
+            this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
+            // 
+            // updateMenuItem
+            // 
+            this.updateMenuItem.Name = "updateMenuItem";
+            this.updateMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.updateMenuItem.Text = "Update";
+            this.updateMenuItem.Click += new System.EventHandler(this.updateMenuItem_Click);
+            // 
+            // deleteMenuItem
+            // 
+            this.deleteMenuItem.Name = "deleteMenuItem";
+            this.deleteMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.deleteMenuItem.Text = "Delete";
+            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
+            // 
+            // refreshMenuItem
+            // 
+            this.refreshMenuItem.Name = "refreshMenuItem";
+            this.refreshMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshMenuItem.Text = "Refresh";
+            this.refreshMenuItem.Click += new System.EventHandler(this.refreshMenuItem_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -205,12 +244,11 @@
             this.flowLayoutPanel1.Controls.Add(this.panel_stock);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(562, 134);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(833, 134);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // btn_purchase
@@ -324,93 +362,72 @@
             this.label_value.TabIndex = 0;
             this.label_value.Text = "Value of stock";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(3, 134);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(133, 125);
-            this.panel4.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Chart";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(142, 134);
+            this.panel3.Controls.Add(this.chart_sales);
+            this.panel3.Location = new System.Drawing.Point(559, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(266, 125);
             this.panel3.TabIndex = 8;
             // 
-            // label2
+            // chart_sales
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Chart";
-            // 
-            // menu_data
-            // 
-            this.menu_data.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMenuItem,
-            this.updateMenuItem,
-            this.deleteMenuItem,
-            this.refreshMenuItem});
-            this.menu_data.Name = "menu_data";
-            this.menu_data.Size = new System.Drawing.Size(114, 92);
-            // 
-            // addMenuItem
-            // 
-            this.addMenuItem.Name = "addMenuItem";
-            this.addMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addMenuItem.Text = "Add";
-            this.addMenuItem.Click += new System.EventHandler(this.addMenuItem_Click);
-            // 
-            // updateMenuItem
-            // 
-            this.updateMenuItem.Name = "updateMenuItem";
-            this.updateMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.updateMenuItem.Text = "Update";
-            this.updateMenuItem.Click += new System.EventHandler(this.updateMenuItem_Click);
-            // 
-            // deleteMenuItem
-            // 
-            this.deleteMenuItem.Name = "deleteMenuItem";
-            this.deleteMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deleteMenuItem.Text = "Delete";
-            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
-            // 
-            // refreshMenuItem
-            // 
-            this.refreshMenuItem.Name = "refreshMenuItem";
-            this.refreshMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.refreshMenuItem.Text = "Refresh";
-            this.refreshMenuItem.Click += new System.EventHandler(this.refreshMenuItem_Click);
+            this.chart_sales.BackColor = System.Drawing.Color.Transparent;
+            this.chart_sales.BorderlineColor = System.Drawing.Color.Empty;
+            this.chart_sales.BorderlineWidth = 0;
+            this.chart_sales.BorderSkin.BackColor = System.Drawing.Color.Empty;
+            this.chart_sales.BorderSkin.BorderColor = System.Drawing.Color.Empty;
+            this.chart_sales.BorderSkin.BorderWidth = 0;
+            this.chart_sales.BorderSkin.PageColor = System.Drawing.Color.Empty;
+            chartArea1.AlignmentStyle = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Cursor)));
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Empty;
+            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            chartArea1.AxisY.LabelAutoFitMaxFontSize = 7;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Empty;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            chartArea1.BorderColor = System.Drawing.Color.Empty;
+            chartArea1.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            this.chart_sales.ChartAreas.Add(chartArea1);
+            this.chart_sales.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            legend1.Enabled = false;
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.Name = "Legend1";
+            this.chart_sales.Legends.Add(legend1);
+            this.chart_sales.Location = new System.Drawing.Point(0, 0);
+            this.chart_sales.Name = "chart_sales";
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Green;
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            series1.Name = "Series1";
+            this.chart_sales.Series.Add(series1);
+            this.chart_sales.Size = new System.Drawing.Size(266, 125);
+            this.chart_sales.TabIndex = 1;
+            this.chart_sales.Text = "chart1";
+            this.chart_sales.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(691, 479);
+            this.ClientSize = new System.Drawing.Size(1012, 479);
             this.Controls.Add(this.panel_main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prices";
             this.panel_main.ResumeLayout(false);
@@ -421,6 +438,7 @@
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_search)).EndInit();
+            this.menu_data.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel_stock.ResumeLayout(false);
             this.panel_stock.PerformLayout();
@@ -428,11 +446,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.menu_data.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_sales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,14 +473,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip menu_data;
         private System.Windows.Forms.ToolStripMenuItem addMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshMenuItem;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
     }
 }
 

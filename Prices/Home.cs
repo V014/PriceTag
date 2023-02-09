@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
@@ -21,6 +22,7 @@ namespace Prices
             lbl_products.Text = LoadProducts();
             lbl_product_stock.Text = LoadStock();
             lbl_stock_value.Text = LoadStockValue();
+            loadChartSales();
         }
         //loads data into a data grid
         private void LoadData()
@@ -39,6 +41,46 @@ namespace Prices
         {
             string stock = con.ReadString("SELECT SUM(stock) FROM stock");
             return stock;
+        }
+        // load chart of sales
+        private void loadChartSales()
+        {
+            // ... execute the query using a database library, such as ADO.NET, Entity Framework, etc.  
+            SQLiteConnection connection = con.GetConnection();
+            // get income
+            SQLiteCommand queryMoney = new SQLiteCommand("SELECT Purchased, Name FROM stock ORDER BY Purchased DESC", connection);
+            SQLiteDataReader income = queryMoney.ExecuteReader();
+            // get expenditure
+            /*
+            SQLiteCommand queryExpenditure = new SQLiteCommand("SELECT amount FROM transactions WHERE action = '-'", connection);
+            SQLiteDataReader expenditure = queryExpenditure.ExecuteReader();
+            */
+            try
+            {
+                chart_sales.Series[0].Points.Clear();
+                while (income.Read())
+                {
+                    chart_sales.Series[0].Points.Add(income.GetInt32(0));
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Income unavailabe", "Assistant", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            /*
+            try
+            {
+                chart_expenditure.Series[0].Points.Clear();
+                while (expenditure.Read())
+                {
+                    chart_expenditure.Series[0].Points.Add(expenditure.GetInt32(0));
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Expenditure unavailabe", "Assistant", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            */
         }
         // stock value
         private string LoadStockValue()
@@ -116,22 +158,22 @@ namespace Prices
         {
             btn_update_Click(sender, e);
         }
-
+        // context menu delete
         private void deleteMenuItem_Click(object sender, EventArgs e)
         {
             btn_delete_Click(sender, e);
         }
-
+        // context menu update
         private void updateMenuItem_Click(object sender, EventArgs e)
         {
             btn_update_Click(sender, e);
         }
-
+        // context menu refresh
         private void refreshMenuItem_Click(object sender, EventArgs e)
         {
             LoadData();
         }
-
+        // context menu add
         private void addMenuItem_Click(object sender, EventArgs e)
         {
             data_search.Rows.Add();
