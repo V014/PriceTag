@@ -135,7 +135,7 @@ namespace Prices
             }
             catch (Exception)
             {
-                MessageBox.Show("Reduce motion for stability", "Assistant");
+                // do nothing
             }
         }
         // when user wants to delete a record
